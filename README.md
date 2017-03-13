@@ -1,15 +1,23 @@
 # Motorola DSP56300 Assembly Language Support
-#===========================================
 
-#Functionality
+## Functionality
 
-Provides DSP56300 assembly syntax highlighting and some editor helpers. 
+Provides DSP56300 assembly syntax highlighting and some additional features: 
 
-Highlighs conditional compilation:
-!(images/if_0.gif)
+Recognizes IF 0 .... ENDIF construction and highlights code appropriately:
+![List](images/if_0.gif)
 
-Keyword pairs highlighting (like .loop/.endl, .if/.else/.endi and etc):
-!(images/pair_highlight.gif)
+Highlights keyword pairs (like .loop/.endl, .if/.else/.endi and etc):
+![List](images/pair_highlight.gif)
 
-Simple autocomplete for some often used cases:
-!(images/autocomplete.gif)
+Autocompletes structured control blocks (.loop/.endl, .while/.endw, and etc):
+![List](images/autocomplete.gif)
+
+## Installation
+
+Make a new folder `olegskydan.DSP56300` in the `<user home>/.vscode/extensions` folder. 
+Copy files into `<user home>/.vscode/extensions/olegskydan.DSP56300` folder and restart Code.
+
+## License
+
+[MIT](LICENSE) &copy; Oleg Skydan
