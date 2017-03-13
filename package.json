@@ -1,0 +1,42 @@
+{
+	"name": "DSP56300",
+	"description": "Motorola DSP56300 Assembly Language support",
+	"version": "0.0.1",
+	"publisher": "olegskydan",
+	"homepage" : "https://github.com/sov1178/vscode-DSP56300/README.md",
+	"repository": {
+        	"type": "git",
+        	"url": "https://github.com/sov1178/vscode-DSP56300"
+    	},
+	"engines": {
+		"vscode": "^0.10.1"
+	},
+	"categories": [
+		"Languages"
+	],
+	"contributes": {
+		"languages": [
+			{
+				"id": "DSP56300",
+				"aliases": [
+					"DSP56300-Asm",
+					"DSP56k",
+					"dsp56k"
+				],
+				"extensions": [
+					".s",
+					".i",
+					".asm"
+				],
+				"configuration": "./DSP56300.configuration.json"
+			}
+		],
+		"grammars": [
+			{
+				"language": "DSP56300",
+				"scopeName": "source.asm.DSP56300",
+				"path": "./syntaxes/DSP56300.json"
+			}
+		]
+	}
+}

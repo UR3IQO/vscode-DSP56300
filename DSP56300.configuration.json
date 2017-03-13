@@ -1,0 +1,60 @@
+{
+   "comments": 
+   {
+      // symbol used for single line comment. Remove this entry if your language does not support line comments
+      "lineComment": ";"
+   },
+
+   // symbols used as "brackets"
+   "brackets": 
+   [
+      ["(",")"],
+
+      //macros
+      ["section", "endsec"],
+      ["macro", "endm"],
+      ["buffer","endbuf"],
+      ["dup","endm"],
+      ["dupa","endm"],
+      ["dupc","endm"],
+      ["dupf","endm"],
+      ["if","endif"],
+      ["else","endif"],
+
+      //structured control, I have to add these lines cause otherwise control blocks marking does not work
+      ["loop", "endl"],
+      ["while", "endw"],
+      ["for", "endf"],
+      ["if","endi"],
+      ["if","else"],
+      ["else","endi"],
+      ["repeat","until"],
+
+      [".LOOP", ".ENDL"],
+      [".WHILE", ".ENDW"],
+      [".FOR", ".ENDF"],
+      [".IF",".ENDI"],
+      [".REPEAT",".UNTIL"]
+   ],
+
+   "autoClosingPairs": 
+   [
+      { "open":"(", "close":")" },
+
+      { "open": "'", "close": "'", "notIn": ["string", "comment"] },
+      { "open": "\"", "close": "\"", "notIn": ["string", "comment"] },
+      
+      { "open": ".LOOP", "close": ".ENDL", "notIn": ["string", "comment"] },	
+      { "open": ".WHILE", "close": ".ENDW", "notIn": ["string", "comment"] },	
+      { "open": ".FOR", "close": ".ENDF", "notIn": ["string", "comment"] },	
+      { "open": ".IF", "close": ".ENDI", "notIn": ["string", "comment"] },	
+      { "open": ".REPEAT", "close": ".UNTIL", "notIn": ["string", "comment"] }
+   ],
+
+   "surroundingPairs": 
+   [
+      { "open":"(", "close":")" },
+      { "open": "'", "close": "'" },
+      { "open": "\"", "close": "\"" }
+   ]
+}

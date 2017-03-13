@@ -1,0 +1,155 @@
+{
+  "fileTypes": [
+    "s",
+    "i",
+    "asm"
+  ],
+  "name": "DSP56300-Asm",
+  "patterns": [
+    {
+      "match": ";[^\n]*\n",
+      "name": "comment.line.semicolon.DSP56300"
+    },
+    {
+      "begin": "(?i)^\\s+(IF)\\s+(0)\\s*(;[^\n]*)?\n",
+      "beginCaptures": 
+      {
+         "1": { "name":"meta.preprocessor.DSP56300" },
+         "2": { "name":"constant.numeric.decimal.DSP56300" },
+         "3": { "name":"comment.line.semicolon.DSP56300" }
+      },
+      "end": "(?i)^\\s+(ELSE|ENDIF)\\s*(;[^\n]*)?\n",
+      "endCaptures": 
+      {
+         "1": { "name":"meta.preprocessor.DSP56300" },
+         "2": { "name":"comment.line.semicolon.DSP56300" }
+      },
+      "contentName": "comment.block.DSP56300"
+    },
+    {
+      "match": "\"[^\"]*\"",
+      "name": "string.quoted.double.DSP56300"
+    },
+    {
+      "match": "'[^']*'",
+      "name": "string.quoted.single.DSP56300"
+    },
+
+    {
+      "match": "(?i)\\b([XYLPE](H|L|\\(.*\\))?:)",
+      "name": "storage.modifier.DSP56300"
+    },
+
+    {
+      "match": "(?i)\\b([AB][012]?|[AB]10|[XY][01]|[XY][^:]|[RMN][0-7]|OMR|COM|EOM|SCS|VBA|SR|CCR|MR|EMR|LC|LA|SZ|SSH|SSL|SP|PC)\\b",
+      "name": "variable.language.register.DSP56300"
+    },
+
+    {
+      "match": "(?i)^[ \t]+(\\.(BREAK|CONTINUE|ELSE|ENDF|ENDI|ENDL|ENDW|FOR|IF|LOOP|REPEAT|UNTIL|WHILE))\\b",
+      "captures":
+      {
+         "1": { "name":"keyword.other.struct_prog.DSP56300" }
+      }
+    },
+
+   {
+      "match": "(?i)\\b(COMMENT|EQU|DEFINE|FAIL|FORCE|HIMEM|INCLUDE|LOMEM|MODE|MSG|ORG|RADIX|RDIRECT|SCSJMP|SCSREG|UNDEF|WARN)\\b",
+      "name": "keyword.other.directive.DSP56300"
+   },
+   {
+      "match": "(?i)\\b(ENDSEC|END|GLOBAL|GSET|LOCAL|SECTION|SET|XDEF|XREF)\\b",
+      "name": "keyword.other.unit.DSP56300"
+   },
+   {
+      "match": "(?i)\\b(BADDR|BSB|BSC|BSM|BUFFER|DC|DCB|DS|DSM|DSR|ENDBUF)\\b",
+      "name": "keyword.other.directive.DSP56300"
+   },
+   {
+      "match": "(?i)\\b(COBJ|IDENT|SYMOBJ)\\b",
+      "name": "keyword.other.directive.DSP56300"
+   },
+   {
+      "match": "(?i)\\b(DUP(A|C|F)?|ENDIF|ENDM|EXITM|IF|MACLIB|MACRO|PMACRO)\\b",
+      "name": "meta.preprocessor.macro.DSP56300"
+   },
+
+   {
+      "match": "(?i)\\b(LIST|LSTCOL|NOLIST|OPT|PAGE|PRCTL|STITLE|TITLE|TABS)\\b",
+      "name": "keyword.other.directive.DSP56300"
+    },
+    {
+      "match": "(?i)\\b((dmac|mac|mpy)(su|uu)|(mac|mpy)(r|i|ri)?)\\b",
+      "name": "keyword.other.opcode.cpu.arith_mul.DSP56300"
+    },
+    {
+      "match": "(?i)\\b(add|addl|addr|adc|abs|asl|asr|clr|cmpm?|cmpu|dec|div|inc|maxm?|neg|normf?|rnd|sbc|sub|subl|subr|tfr|tst|t(cc|hs|cs|lo|ec|eq|es|ge|gt|lc|le|ls|lt|mi|ne|nr|pl|nn))\\b",
+      "name": "keyword.other.opcode.cpu.arith_other.DSP56300"
+    },
+    {
+      "match": "(?i)\\b(and|andi|clb|eor|extract|extractu|insert|lsl|lsr|merge|net|or|ori|rol|ror)\\b",
+      "name": "keyword.other.opcode.cpu.logic.DSP56300"
+    },
+    {
+      "match": "(?i)\\b(bchg|bclr|bset|btst)\\b",
+
+      "name": "keyword.other.opcode.cpu.bit.DSP56300"
+    },
+    {
+      "match": "(?i)\\b(do|do forever|enddo|brk(cc|hs|cs|lo|ec|eq|es|ge|gt|lc|le|ls|lt|mi|ne|nr|pl|nn))\\b",
+      "name": "keyword.other.opcode.cpu.loop.DSP56300"
+    },
+    {
+      "match": "(?i)\\b(move|movem|movep|movec|lua|lra|vsl)\\b",
+      "name": "keyword.other.opcode.cpu.move.DSP56300"
+    },
+    {
+      "match": "(?i)\\b((b|bs|debug|j|trap)(cc|hs|cs|lo|ec|eq|es|ge|gt|lc|le|ls|lt|mi|ne|nr|pl|nn)|if(cc|hs|cs|lo|ec|eq|es|ge|gt|lc|le|ls|lt|mi|ne|nr|pl|nn)(\\.u)?)\\b",
+      "name": "keyword.other.opcode.cpu.control.DSP56300"
+    },
+    {
+      "match": "(?i)\\b(bra|brclr|brset|bsclr|bsr|bsset|debug|jclr|jmp|jsclr|jset|jsr|jsset|nop|rep|reset|rti|rts|stop|trap|wait)\\b",
+      "name": "keyword.other.opcode.cpu.control.DSP56300"
+    },
+    {
+      "match": "(?i)\\b(pflush|pflushun|pfree|plock|plockr|punlock|punlockr)\\b",
+      "name": "keyword.other.opcode.cpu.cache.DSP56300"
+    },
+    {
+      "match": "(?i)\\b(illegal)\\b",
+      "name": "invalid.illegal.opcode.DSP56300"
+    },
+
+    {
+      "match": "(?i)\\b([A-Z][A-Z0-9_]*)\\b",
+      "name": "meta.label.global.DSP56300"
+    },
+    {
+      "match": "(?i)\\b(_[A-Z][A-Z0-9_]*)\\b",
+      "name": "meta.label.local.DSP56300"
+    },
+    {
+      "match": "(?i)[^A-Z0-9](\\$[0-9A-F]+)\\b",
+      "captures":
+      {
+         "1": { "name":"constant.numeric.hex.DSP56300"  }
+      }
+    },
+    {
+      "match": "(?i)[^A-Z0-9](%[01]+)\\b",
+      "captures":
+      {
+         "1": { "name":"constant.numeric.binary.DSP56300"  }
+      }
+    },
+    {
+      "match": "(?i)[^A-Z0-9](`?[+-]?[0-9]*\\.?[0-9]+([eE][+-]?[0-9]+)?)\\b",
+      "captures":
+      {
+         "1": { "name":"constant.numeric.decimal.DSP56300"  }
+      }
+    }
+  ],
+  "scopeName": "source.asm.DSP56300",
+  "uuid": "73A2BFA3-A999-4709-B47C-3AB2347F1CA8"
+}
